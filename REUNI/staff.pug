@@ -1,0 +1,9 @@
+extends layout
+block body
+    include back
+
+    h1 Staff
+    p Enter your ID
+    form(method="get" action="result.pug.html")
+        input(placeholder="ID")
+        button Submit
