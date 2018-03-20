@@ -1,34 +1,56 @@
-DROP DATABASE IF EXISTS `reunifyDB`;
+#<<<<<<< reuni_castillo
 
+CREATE DATABASE IF NOT EXISTS reunify_db;
+USE reunify_db;
 
-CREATE DATABASE `reunifyDB`;
-Use reunifyDB;
+# If the table already exists, remove it before trying to create the table again
+DROP TABLE IF EXISTS students;
 
-
-CREATE TABLE students
-
-(
-	StudentID int (10) NOT NULL,
-	StudentName VARCHAR(255),
-	StudentPhoto varchar(255),
-	GradeLevel INT (4),
-	HomeroomTeacher VARCHAR(255),
-	DriversID int (14) NOT NULL,
-	ParentName varchar(255) NOT NULL,
-	ParentName2 varchar(255),
-	StudentStatus varchar(255),
-	ParentStatus varchar(255),
-	StreetAddress varchar(255),
-	ZipAddress varchar(255),
-	RoomLocation varchar(255)
-
-	PRIMARY KEY (StudentID)
+# Create the students table
+CREATE TABLE students (
+student_id int NOT NULL PRIMARY KEY,
+student_name varchar(255) NOT NULL,
+student_photo longblob NOT NULL,
+grade_level varchar(2) NOT NULL,
+parent_name varchar(255) NOT NULL,
+parent_addr varchar(255) NOT NULL,
+parent_csz varchar(255) NOT NULL,
+parent_govt_id int NOT NULL,
+reunify_pnt varchar(20) NOT NULL,
+student_status varchar(100) NOT NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
 
-CREATE TABLE finalReunify
-(
-	StudentID
-	DriversID
-	TimeReleased
+
+# If the table already exists, remove it before trying to create the table again
+DROP TABLE IF EXISTS release_stud;
+
+# Create the release student table
+CREATE TABLE release_stud (
+student_id int NOT NULL PRIMARY KEY,
+parent_govt_id int NOT NULL,
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+
+# If the table already exists, remove it before trying to create the table again
+DROP TABLE IF EXISTS checkin_parent;
+
+# Create the parent check-in table
+CREATE TABLE checkin_parent (
+parent_govt_id int NOT NULL PRIMARY KEY,
+parent_name varchar(255) NOT NULL,
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+
+# If the table already exists, remove it before trying to create the table again
+DROP TABLE IF EXISTS reunify_points;
+
+# Create the reunify points table
+CREATE TABLE reunify_points (
+reunify_point_id varchar(100) NOT NULL PRIMARY KEY,
+reunify_point_count int NOT NULL DEFAULT 0,
+time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+=======
