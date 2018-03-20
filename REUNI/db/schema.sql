@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS students;
 CREATE TABLE students (
 student_id int NOT NULL PRIMARY KEY,
 student_name varchar(255) NOT NULL,
-student_photo longblob NOT NULL,
+student_photo varchar(255) NOT NULL,
 grade_level varchar(2) NOT NULL,
 parent_name varchar(255) NOT NULL,
 parent_addr varchar(255) NOT NULL,
