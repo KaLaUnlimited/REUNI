@@ -1,3 +1,4 @@
+#<<<<<<< reuni_castillo
 
 CREATE DATABASE IF NOT EXISTS reunify_db;
 USE reunify_db;
@@ -52,3 +53,4 @@ reunify_point_id varchar(100) NOT NULL PRIMARY KEY,
 reunify_point_count int NOT NULL DEFAULT 0,
 time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+=======
