@@ -1,51 +1,64 @@
+
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
-    StudentID: {
+  var Students = sequelize.define("Students", {
+    student_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [1]
+      primaryKey: true,
+      validate: { 
+        min: 100000000,
+        max: 999999999
       }
     },
-    StudentName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      len: [1]
-    },
-    StudentPhoto: {
-      type: DataTypes.STRING
-    }, 
-    GradeLevel: {
-      type: DataTypes.INTEGER
-    },
-    HomeroomTeacher: {
-      type: DataTypes.STRING
-    },
-    DriversID: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      len: [1]
-    },
-    ParentName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    ParentName2: {
+    student_name: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    student_photo: {
+      type: Sequelize.BLOB,
+      allowNull: false,
+      get() {
+        return this.getDataValue('student_photo').toString('utf8');
+      },
+    },
+    grade_level: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    parent_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    parent_addr: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    parent_csz: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    parent_govt_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: { 
+        min: 100000000,
+        max: 999999999
+      }
+    },
+    reunify_pnt: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    student_status: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    time_stamp: {
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.NOW  
+    },
   });
 
-
-  Post.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Post.belongsTo(models.Author, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
-  return Post;
+  return Students;
 };
+
