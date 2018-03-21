@@ -20,7 +20,7 @@ router.get("/students", function(req, res) {
   // replace old function with sequelize function
   db.Students.findAll({
     where: {
-      student_id = req.body.student_id
+      student_id: req.body.student_id
     },
   })
   // use promise method to pass the students...
@@ -39,10 +39,10 @@ router.get("/students", function(req, res) {
 
 router.put("/students/update", function(req, res) {
   
-  if (req.body.student.status != 'Released' &&  ([string]::IsNullOrEmpty(req.body.reunify_pnt))) {
+  if (req.body.student.status != 'Released' &&  (IsNullOrEmpty(req.body.reunify_pnt))) {
     db.Students.update({
       reunify_pnt: 'red',
-      student_status = 'Received'
+      student_status: 'Received'
     })
     .then(function(dbStudents) {
       res.redirect("/");

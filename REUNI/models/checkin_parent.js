@@ -1,3 +1,4 @@
+var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
   var Checkin_parent = sequelize.define("Checkin_parent", {
