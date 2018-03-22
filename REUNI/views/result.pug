@@ -1,7 +1,9 @@
 extends layout
 block body
-    include views/back
-    h1 it works
-    #{route}
-    a(href="index.pug.html")
-        button Start Over
+    include back
+
+    div.container
+        h1 it works
+            #{route}
+        a(href="/index")
+            button Start Over

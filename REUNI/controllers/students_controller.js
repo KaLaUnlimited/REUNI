@@ -29,6 +29,9 @@ router.get("/students", function(req, res) {
   });
 });
 
+
+
+
 router.get("/checkin", function(req, res) {
 
     return res.render("checkin", {title: "Check-in"});
@@ -41,7 +44,18 @@ router.get("/parent", function(req, res) {
 
     return res.render("parent", {title: "Parent"});
 });
+router.get("/admin", function(req, res) {
 
+    return res.render("admin", {title: "Admin"});
+});
+router.get("/result", function(req, res) {
+
+    return res.render("result", {title: "Results"});
+});
+router.get("/index", function(req, res) {
+
+    return res.render("index", {title: "index"});
+});
 router.put("/students/update", function(req, res) {
   
   if (req.body.student.status != 'Released' &&  (IsNullOrEmpty(req.body.reunify_pnt))) {
