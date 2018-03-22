@@ -21,13 +21,15 @@ router.get("/admin_parents", function(req, res) {
 
   // use promise method to pass the parent name object...
   .then(function(dbCheckin_parent) {
+
+    console.log("admin_parents_find: ", dbCheckin_parent);
+    
     // passing PUG object to the index file for updating the page
     var PugObject = {
       checkin_parent: dbCheckin_parent
     };
     return res.render("index", PugObject);
   });
-  console.log("admin_parents_find: ", dbCheckin_parent);
 });
 
 module.exports = router;

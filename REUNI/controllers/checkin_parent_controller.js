@@ -21,6 +21,9 @@ router.get("/checkin_parent", function(req, res) {
   })
   // use promise method to pass the students...
   .then(function(dbStudents) {
+
+    console.log("checkin_parent_find: ", dbStudents);
+
     // into the main index, updating the page
     var PugObject = {
           students: dbStudents
@@ -38,8 +41,11 @@ router.post("/checkin_parent/create", function(req, res) {
   })
   // pass the result of our call
   .then(function(dbCheckin_parent) {
+
+    console.log("checkin_parent_create: ", dbCheckin_parent);
+
     // log the result to our terminal/bash window
-    console.log(dbCheckin_parent);
+    console.log("checkin_parent_create: ", dbCheckin_parent);
     // redirect
     res.redirect("/checkin_parent");
   });

@@ -27,6 +27,9 @@ router.get("/admin_students", function(req, res) {
 
   // use promise method to pass the students
   .then(function(dbStudents) {
+
+    console.log("admin_students_find: ", dbStudents);
+
     // use Pug object for the Pug index file to update the page
     var PugObject = {
       students: dbStudents

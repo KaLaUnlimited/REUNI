@@ -23,10 +23,12 @@ router.get("/students", function(req, res) {
   })
   // use promise method to pass the students...
   .then(function(dbStudents) {
+
+    console.log("students_find: ", dbStudents);
+
     // into the main index, updating the page
     var PugObject = {
       students: dbStudents
-      reunify_points:
     };
     return res.render("index", PugObject);
   });
@@ -38,18 +40,21 @@ router.get("/students", function(req, res) {
 router.put("/students/update", function(req, res) {
   
   if (req.body.student.status != 'Released' &&  ([string]::IsNullOrEmpty(req.body.reunify_pnt))) {    
-    db.Reunify_points.findOne({
+
+    db.Reunify_points.update({
+      reunify_point_count++,
       where: {
         reunify_point_count: {[Op.lt]: 20}
       },
     })
 
-    db.Reunify_points.update(reunify_point_count++, function(result)
-
-    })
+    }
     .then(function(dbReunify_points) {
+
+      console.log("students_update: ", dbReunify_points);
+
       return db.Students.update({
-        reunify_pnt: dbRunify_points.reunify_point,
+        reunify_pnt: dbReunify_points.reunify_point,
         student_status = 'Received'
       })
     .then(function(dbStudents) {
