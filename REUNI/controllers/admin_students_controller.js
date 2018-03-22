@@ -1,7 +1,6 @@
-// Our students controller
-// =====================
-// This file uses Sequelize to manage data manipulation
-// for all apropos http requests.
+// Our Admin Students controller
+// =============================
+// This file uses Sequelize to manage data manipulation for all apropos http requests.
 
 var express = require("express");
 
@@ -15,26 +14,24 @@ router.get("/", function(req, res) {
   res.redirect("/admin_students");
 });
 
-// get route, edited to match sequelize
+// get route -> index, edited to match sequelize
 router.get("/admin_students", function(req, res) {
   
   db.Students.findAll({
     where: {
       student_status: {[Op.ne]: 'Released'}
     },
-    // Here we specify we want to return our admin_students in ordered by ascending reunification point, student status and students_timestamp
+    // Ordered by ascending reunification point, student status and timestamp
     order: [["reunify_pnt", "student_status", "timestamp", "ASC"]]
   })
 
-  // ********** THIS PART WE NEED TO MODIFY FOR PUG *******
-
-  // use promise method to pass the admin_students...
+  // use promise method to pass the students
   .then(function(dbStudents) {
-    // using handlebars object into the main handlebars index file (INDEX.HANDLEBARS), updating the page
-    var hbsObject = {
-      Students: dbStudents
+    // use Pug object for the Pug index file to update the page
+    var PugObject = {
+      students: dbStudents
     };
-    return res.render("index", hbsObject);
+    return res.render("index", PugObject);
   });
 });
 

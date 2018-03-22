@@ -15,11 +15,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     student_photo: {
-      type: Sequelize.BLOB,
-      allowNull: false,
-      get() {
-        return this.getDataValue('student_photo').toString('utf8');
-      },
+      type: DataTypes.STRING,
+      allowNull: false
     },
     grade_level: {
       type: DataTypes.STRING,
@@ -57,6 +54,12 @@ module.exports = function(sequelize, DataTypes) {
       type: Sequelize.DATE,
       defaultValue: Sequelize.NOW  
     },
+    {
+    classMethods: {
+      associate: function(models) {
+        Student.hasOne(models.Checkin_parent);
+      }
+    }
   });
 
   return Students;

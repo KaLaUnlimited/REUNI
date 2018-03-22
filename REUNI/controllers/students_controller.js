@@ -1,8 +1,7 @@
 // Our Students controller
-// =====================
+// =======================
 // This file uses Sequelize to manage data manipulation for all apropos http requests.
-// NOTE: This is sequelize queries
-// 
+ 
 var express = require("express");
 
 var router = express.Router();
@@ -15,9 +14,8 @@ router.get("/", function(req, res) {
   res.redirect("/students");
 });
 
-// get route, edited to match sequelize
+// get route -> index, edited to match sequelize
 router.get("/students", function(req, res) {
-  // replace old function with sequelize function
   db.Students.findAll({
     where: {
       student_id = req.body.student_id
@@ -26,29 +24,39 @@ router.get("/students", function(req, res) {
   // use promise method to pass the students...
   .then(function(dbStudents) {
     // into the main index, updating the page
-    var hbsObject = {
+    var PugObject = {
       students: dbStudents
+      reunify_points:
     };
-    return res.render("index", hbsObject);
+    return res.render("index", PugObject);
   });
 });
 
 
 // put route to update   
-// Question - how do we do the reunify point logic???
 
 router.put("/students/update", function(req, res) {
   
-  if (req.body.student.status != 'Released' &&  ([string]::IsNullOrEmpty(req.body.reunify_pnt))) {
-    db.Students.update({
-      reunify_pnt: 'red',
-      student_status = 'Received'
+  if (req.body.student.status != 'Released' &&  ([string]::IsNullOrEmpty(req.body.reunify_pnt))) {    
+    db.Reunify_points.findOne({
+      where: {
+        reunify_point_count: {[Op.lt]: 20}
+      },
     })
+
+    db.Reunify_points.update(reunify_point_count++, function(result)
+
+    })
+    .then(function(dbReunify_points) {
+      return db.Students.update({
+        reunify_pnt: dbRunify_points.reunify_point,
+        student_status = 'Received'
+      })
     .then(function(dbStudents) {
-      res.redirect("/");
+      res.redirect("/students");
     });
   }
- 
 });
 
 module.exports = router;
+

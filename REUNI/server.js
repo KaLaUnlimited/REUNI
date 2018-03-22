@@ -17,19 +17,29 @@ app.use(bodyParser.urlencoded({
 }));
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
-var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({
-  defaultLayout: "main"
-}));
-app.set("view engine", "handlebars");
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
-var routes = require("./controllers/students_controller");
+var routes1 = require("./controllers/students_controller");
+var routes2 = require("./controllers/checkin_parent_controller");
+var routes3 = require("./controllers/admin_students_controller");
+var routes4 = require("./controllers/admin_reunify_controller");
+var routes5 = require("./controllers/admin_parents_controller");
 
-app.use("/", routes);
-app.use("/update", routes);
-app.use("/create", routes);
+app.use("/", routes1);
+app.use("/students", routes1);
+app.use("/students/update", routes1);
 
+app.use("/checkin_parent", routes2);
+app.use("/checkin_parent/create", routes2);
+
+app.use("/admin_students", routes3);
+
+app.use("/admin_reunify", routes4);
+app.use("/admin_reunify/create", routes4);
+
+app.use("/admin_parents", routes5);
 
 // listen on port 3000
 var port = process.env.PORT || 3000;
