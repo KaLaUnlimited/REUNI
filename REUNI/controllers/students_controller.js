@@ -34,6 +34,7 @@ router.get("/students", function(req, res) {
   });
 });
 
+
 // get route -> index, edited to match sequelize
 router.get("/students/reunify_point", function(req, res) {
   db.Reunify_points.findOne({
@@ -43,6 +44,11 @@ router.get("/students/reunify_point", function(req, res) {
   })
   // use promise method to pass the students...
   .then(function(dbReunify_points) {
+
+
+
+router.get("/checkin", function(req, res) {
+
 
     console.log("students_reunify_point_find: ", dbReunify_points);
 
@@ -54,8 +60,24 @@ router.get("/students/reunify_point", function(req, res) {
   });
 });
 
+
 // put route to update   
 
+    return res.render("parent", {title: "Parent"});
+});
+router.get("/admin", function(req, res) {
+
+    return res.render("admin", {title: "Admin"});
+});
+router.get("/result", function(req, res) {
+
+    return res.render("result", {title: "Results"});
+});
+router.get("/index", function(req, res) {
+
+
+    return res.render("index", {title: "index"});
+});
 router.put("/students/update", function(req, res) {
   
   if (req.body.student.status != 'Released' &&  ([string]::IsNullOrEmpty(req.body.reunify_pnt))) {    

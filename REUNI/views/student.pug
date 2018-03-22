@@ -2,8 +2,11 @@ extends layout
 block body
     include back
 
-    h1 Student
-    p Enter your ID
-    form(method="get" action="result.pug.html")
-        input(placeholder="ID")
-        button Submit
+    div.container
+        h1 Student
+            p Enter your ID
+            form(method="get" action="/result")
+                input(placeholder="Student ID")
+                button Submit
+            a(href="/index")
+                button Start Over
