@@ -2,12 +2,12 @@ extends layout
 block body
     include back
 
-
     div.container
-        h1 Parent
-            p Enter your Driver's License / ID
+        h1 Admin
+            p Enter your ID
             form(method="get" action="/result")
-                input(placeholder="Driver's License / ID")
+                input(placeholder="Enter Admin ID")
                 button Submit
+
             a(href="/index")
                 button Start Over
