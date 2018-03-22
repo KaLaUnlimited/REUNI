@@ -30,6 +30,7 @@ var routes5 = require("./controllers/admin_parents_controller");
 app.use("/", routes1);
 app.use("/students", routes1);
 app.use("/students/update", routes1);
+app.use("/students/reunify_point", routes1);
 
 app.use("/checkin_parent", routes2);
 app.use("/checkin_parent/create", routes2);
