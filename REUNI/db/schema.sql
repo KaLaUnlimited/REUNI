@@ -1,3 +1,4 @@
+#<<<<<<< reuni_castillo
 
 CREATE DATABASE IF NOT EXISTS reunify_db;
 USE reunify_db;
@@ -9,7 +10,7 @@ DROP TABLE IF EXISTS students;
 CREATE TABLE students (
 student_id int NOT NULL PRIMARY KEY,
 student_name varchar(255) NOT NULL,
-student_photo longblob NOT NULL,
+student_photo varchar(255) NOT NULL,
 grade_level varchar(2) NOT NULL,
 parent_name varchar(255) NOT NULL,
 parent_addr varchar(255) NOT NULL,
@@ -52,3 +53,4 @@ reunify_point varchar(100) NOT NULL PRIMARY KEY,
 reunify_point_count int NOT NULL DEFAULT 0,
 time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+=======

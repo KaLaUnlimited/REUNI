@@ -34,6 +34,25 @@ router.get("/students", function(req, res) {
   });
 });
 
+// get route -> index, edited to match sequelize
+router.get("/students/reunify_point", function(req, res) {
+  db.Reunify_points.findOne({
+    where: {
+      reunify_point_count: {[Op.lt]: 20}
+    },
+  })
+  // use promise method to pass the students...
+  .then(function(dbReunify_points) {
+
+    console.log("students_reunify_point_find: ", dbReunify_points);
+
+    // into the main index, updating the page
+    var PugObject = {
+      reunify_point: dbReunify_points
+    };
+    return res.render("index", PugObject);
+  });
+});
 
 // put route to update   
 
@@ -42,19 +61,19 @@ router.put("/students/update", function(req, res) {
   if (req.body.student.status != 'Released' &&  ([string]::IsNullOrEmpty(req.body.reunify_pnt))) {    
 
     db.Reunify_points.update({
-      reunify_point_count++,
+      reunify_point_count++
       where: {
-        reunify_point_count: {[Op.lt]: 20}
+        reunify_point: req.body.reunify_point
       },
     })
 
     }
     .then(function(dbReunify_points) {
 
-      console.log("students_update: ", dbReunify_points);
+      console.log("student_update_reunify_point: ", dbReunify_points);
 
       return db.Students.update({
-        reunify_pnt: dbReunify_points.reunify_point,
+        reunify_pnt: req.body.reunify_point,
         student_status = 'Received'
       })
     .then(function(dbStudents) {

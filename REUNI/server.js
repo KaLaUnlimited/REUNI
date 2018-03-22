@@ -9,14 +9,14 @@ var db = require("./models");
 
 var app = express();
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(__dirname + "./public"));
-
+app.use(express.static("."));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
   extended: false
 }));
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
+
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));

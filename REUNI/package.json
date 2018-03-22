@@ -11,5 +11,16 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "mysql2": "^1.5.3",
+    "pug": "^2.0.1",
+    "sequelize": "^4.37.3"
+  },
+  "devDependencies": {
+    "express-cli": "0.0.1",
+    "sequelize-cli": "^4.0.0"
+  }
 }

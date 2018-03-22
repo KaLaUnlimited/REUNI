@@ -42,8 +42,6 @@ router.post("/checkin_parent/create", function(req, res) {
   // pass the result of our call
   .then(function(dbCheckin_parent) {
 
-    console.log("checkin_parent_create: ", dbCheckin_parent);
-
     // log the result to our terminal/bash window
     console.log("checkin_parent_create: ", dbCheckin_parent);
     // redirect
