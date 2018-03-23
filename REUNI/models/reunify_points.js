@@ -1,17 +1,15 @@
-var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
-  var Release_stud = sequelize.define("Release_stud", {
-    student_id: {
-      type: DataTypes.INTEGER,
+  var Runify_points = sequelize.define("Reunify_points", {
+    reunify_point: {
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
       validate: { 
-        min: 100000000,
-        max: 999999999
+        len: [1]
       }
     },
-    parent_govt_id: {
+    reunify_point_count: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: { 
@@ -22,15 +20,8 @@ module.exports = function(sequelize, DataTypes) {
     time_stamp: {
       type: Sequelize.DATE,
       defaultValue: Sequelize.NOW  
-    },
-    {
-    classMethods: {
-      associate: function(models) {
-        Student.hasOne(models.Parent);
-      }
     }
   });
 
-  return Release_stud;
+  return Reunify_points;
 };
-
