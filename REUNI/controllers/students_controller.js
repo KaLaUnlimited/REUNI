@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
   res.redirect("/students");
 });
 
-
+///route to confirm to user the most recent student checkin
 router.get("/students", function(req, res) {
 
   db.Students.findAll({
