@@ -2,11 +2,10 @@
     .modal-dialog(role='document')
         .modal-content
             .modal-header
-                h5.modal-title Student Registered
+                h5.modal-title Modal title
                 button.close(type='button', data-dismiss='modal', aria-label='Close')
                     span(aria-hidden='true') ×
             .modal-body
+                h2 #{parent_name}
                 h2 #{student_name}
-                h2 #[img(src='#{student_photo}')]
-                h3 Grade: #{grade_level}
-
+                h3 #{student_status}
