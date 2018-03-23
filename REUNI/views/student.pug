@@ -5,8 +5,10 @@ block body
     div.container
         h1 Student
             p Enter your ID
-            form(method="get" action="/result")
-                input(placeholder="Student ID")
+            form(id="id_form" method="get" action="/")
+                input(placeholder="Student ID" id="student_id")
                 button Submit
-            a(href="/index")
+            a(href="/")
                 button Start Over
+
+    script(src="/assets/js/student.js", defer="defer")
