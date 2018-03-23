@@ -49,7 +49,7 @@ DROP TABLE IF EXISTS reunify_points;
 
 # Create the reunify points table
 CREATE TABLE reunify_points (
-reunify_point_id varchar(100) NOT NULL PRIMARY KEY,
+reunify_point varchar(100) NOT NULL PRIMARY KEY,
 reunify_point_count int NOT NULL DEFAULT 0,
 time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
