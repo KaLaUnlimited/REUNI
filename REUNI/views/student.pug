@@ -4,11 +4,13 @@ block body
 
     div.container
         h1 Student
-            p Enter your ID
-            form(id="id_form" method="get" action="/")
-                input(placeholder="Student ID" id="student_id")
-                button Submit
-            a(href="/")
-                button Start Over
+        p Enter your ID
+        form(id="id_form" method="post" action="/students/checkin")
+            input(placeholder="Student ID" id="student_id")
+            button Submit
+
+
+        a(href="/")
+            button Start Over1
 
     script(src="/assets/js/student.js", defer="defer")

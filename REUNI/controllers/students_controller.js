@@ -38,14 +38,21 @@ router.get("/students", function(req, res) {
   });
 });
 
+router.post("/students/checkin", function(req, res){
+    db.Students.find({
+        where: {
+            student_id :req.body.id
+        },
+    })
+    // use promise method to pass the students...
+        .then(function(dbStudent) {
 
+            console.log("student_find: ", dbStudent);
 
+            return res.render("student_result_modal", dbStudent.dataValues);
+        });
 
-
-
-
-
-
+})
 
 
 router.put("/students/update", function(req, res) {

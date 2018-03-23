@@ -20,7 +20,7 @@ app.use(methodOverride("_method"));
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
-// var routes1 = require("./controllers/students_controller");
+app.use(require("./controllers/students_controller"));
 // var routes2 = require("./controllers/checkin_parent_controller");
 // var routes3 = require("./controllers/admin_students_controller");
 // var routes4 = require("./controllers/admin_reunify_controller");

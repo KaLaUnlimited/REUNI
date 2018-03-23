@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
   var Students = sequelize.define("Students", {
     student_id: {
       type: DataTypes.INTEGER,
-      primarykey:true
+      primaryKey:true
     
     },
     student_name: {
@@ -18,19 +18,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    par_name: {
+    parent_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    par_addr: {
+    parent_addr: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    par_csz: {
+    parent_csz: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    par_gvt_id: {
+    parent_govt_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: { 
@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "NOT CHECKED",
       allowNull: false
     },
-
+/*
     student_checkin_time: {
       type: DataTypes.DATE,
       defaultValue:DataTypes.NULL
@@ -71,7 +71,7 @@ module.exports = function(sequelize, DataTypes) {
       type:DataTypes.DATE,
       defaultValue:DataTypes.NULL
       
-    },
+    }, */
    
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE 
