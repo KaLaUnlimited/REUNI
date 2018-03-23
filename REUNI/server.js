@@ -1,4 +1,4 @@
-
+var path = require('path');
 
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -9,7 +9,7 @@ var db = require("./models");
 
 var app = express();
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("."));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
   extended: false

@@ -6,8 +6,8 @@ block body
     div.container
         h1 Parent
             p Enter your Driver's License / ID
-            form(method="get" action="/result")
+            form(method="get" action="/result" onsubmit="parentQuery()")
                 input(placeholder="Driver's License / ID")
-                button Submit
+                button#parentBtn Submit
             a(href="/index")
                 button Start Over
