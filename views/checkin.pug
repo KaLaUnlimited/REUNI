@@ -4,8 +4,16 @@ block body
 
 
     div.container
-        h1 Select your status
-        a(href="/student")
-            button.btn Student
-        a(href="/parent")
-            button.btn Parent
+        section(id="login-component" class="login-wrapper")
+            section(class="login-form")
+                 h1 Select your status
+
+                 a(href="/student")
+                    button(class="btn indexbtn" style="margin:3px;width: 85%;") Student
+                 a(href="/parent")
+                    button(class="btn indexbtn"  style="margin:3px;width: 85%;") Parent
+                 span( class="glyphicon glyphicon-wrench" aria-hidden="true")
+            section(class="login-info")
+                img(style="width:250px; height: 112px;" class ="gwinnettLogo" src="../assets/gcps-logo2.png" alt="Image Title")
+       
+       
