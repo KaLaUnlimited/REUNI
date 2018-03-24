@@ -4,7 +4,7 @@ $("#id_form").on('submit', function (e) {
     getParentInfo(parentID);
 });
 function getParentInfo(parentId) {
-    $.post('/students/checkin', {par_gov_id: parentId}).then(function (html) {
+    $.post('/parents/checkin', {par_gvt_id: parentId}).then(function (html) {
         // 1. Add html to page
         $("body").append(html)
         // 2. Show modal with `modal()`

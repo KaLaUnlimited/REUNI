@@ -56,12 +56,12 @@ router.post("/parent", function (req, res) {
 router.post("/parents/checkin", function(req, res){
     db.Students.find({
         where: {
-            parent_id :req.body.id
+            par_gvt_id :req.body.par_gvt_id
         },
     })
     // use promise method to pass the students...
         .then(function(dbStudent) {
-            console.log("student_find: ", dbStudent);
+            console.log("Parent_find: ", dbStudent);
             return res.render("parent_result_modal", dbStudent.dataValues);
         });
 })
