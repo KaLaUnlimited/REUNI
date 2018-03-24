@@ -3,11 +3,12 @@ block body
     include back
 
     div.container
-        h1 Admin
+     section(id="login-component" class="login-wrapper")
+       h1 Admin
             p Enter your ID
             form(method="get" data-toggle="modal")
-                input(placeholder="Enter Admin ID")
-                button Submit
+                input(class= "form-control" placeholder="Enter Admin ID")
+                button(class="btn" style="margin:3px;") Submit
 
             a(href="/index")
-                button Start Over
+                button(class="btn") Start Over

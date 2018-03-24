@@ -3,13 +3,17 @@ block body
     include back
 
     div.container
-        h1 Parent
-            p Enter your Driver's License / ID
+        section(id="login-component" class="login-wrapper")
+            section(class="login-form")
+              h1 Parent
+              p Enter your Driver's License / ID
                 form(id="id_form")
-                    input(placeholder="Driver's License / ID" id="parent_id")
+                    input(class= "form-control" placeholder="Driver's License / ID" id="parent_id")
                     button#parentBtn Submit
                          a(href="/parent")
                     button Start Over
+            section(class="login-info")
+                img(style="width:250px; height: 112px;" class ="gwinnettLogo" src="../assets/gcps-logo2.png" alt="Image Title")
     
     script(src="/assets/js/parent.js", defer="defer")
                
