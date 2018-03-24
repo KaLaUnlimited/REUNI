@@ -4,12 +4,15 @@ block body
     include back
 
     div.container
-        h1 Student
-            p Enter your ID
-            form(id="id_form")
-                input(placeholder="Student ID" id="student_id")
-                button Submit
-            a(href="/")
-                button Start Over
-
+        section(id="login-component" class="login-wrapper")
+            section(class="login-form")
+              h1 Student
+               p Enter your ID
+                 form(id="id_form")
+                     input( class= "form-control" placeholder="Student ID" id="student_id")
+                     button(class="btn" style="margin:3px;") Submit
+                     a(href="/")
+                        button(class="btn" style="margin:3px;") Start Over
+            section(class="login-info")
+                img(style="width:250px; height: 112px;" class ="gwinnettLogo" src="../assets/gcps-logo2.png" alt="Image Title")
     script(src="/assets/js/student.js", defer="defer")
