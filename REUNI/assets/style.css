@@ -42,6 +42,7 @@ p {
 *, *:before, *:after {
     box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 form {
 
@@ -71,3 +72,5 @@ input {
     display: flex;
     align-items: flex-end;
 }
+=======
+>>>>>>> parent of c58182e... cleaned up files
