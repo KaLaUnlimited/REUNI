@@ -4,7 +4,7 @@ var db = require('../models');
 
 var router = express.Router();
 
-var db = require('../models');
+
 const data = require("../seeds.json");
 const faker = require("faker");
 
