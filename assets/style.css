@@ -1,9 +1,11 @@
-@font-face {
+ /* @font-face {
     font-family: "Copperplate";
     src: url(https://www.dafontfree.net/download-copperplate-gothic-light-f119748.htm) format("truetype");
-}
+}  */
 
-body {
+ /* body {
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/circles-and-roundabouts.png);
+    
     margin-top: 30px;
     background-color:  #0B0C10;
     text-align: center;
@@ -12,7 +14,7 @@ body {
 
 
 button{
-    width: 60%;
+    width: 20%;
     height: 22%;
     display:block;
     padding:0.7em 1.7em;
@@ -65,9 +67,252 @@ input {
     font-family: "Copperplate", sans-serif;
 }
 
-.button.button-outline.back {
-
+/* .button.button-outline.back { */
+/*
     width: 10%;
     display: flex;
     align-items: flex-end;
-}
+}  */
+
+
+html, body {
+    /* background-color: #EEE;*/
+     font-family: sans-serif !important;
+     font-size: 14px;
+     background: url("https://www.toptal.com/designers/subtlepatterns/patterns/circles-and-roundabouts.png");
+     display: flex;
+     justify-content: flex-end;
+     width: 100%;
+     height: 100%;
+   }
+   h1{
+    margin-bottom: 130px;
+   }
+   
+   .login-wrapper {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     height: 500px;
+     min-height: 400px;
+     width: 80%;
+     min-width: 400px;
+     max-width: 900px;
+     margin: 10rem;
+     border-radius: 3px;
+     -moz-box-shadow: 1px 1px 50px 0px #656565;
+     -webkit-box-shadow: 1px 1px 50px 0px #656565;
+     -o-box-shadow: 1px 1px 50px 0px #656565;
+     box-shadow: 1px 1px 50px 0px #656565;
+     filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=50);
+   }
+   .login-wrapper section {
+     width: 45.2%;
+     padding: 5%;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+   }
+   .login-wrapper section.login-form {
+     height: 100%;
+     order: 1;
+     width: 45%;
+     background-color: #F9F9F9;
+     position: relative;
+   }
+   .login-wrapper section.login-form .messages {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     left: 0;
+   }
+   .login-wrapper section.login-form .messages .message {
+     text-align: center;
+     color: #fff;
+     height: 50px;
+     line-height: 50px;
+   }
+   .login-wrapper section.login-form .messages .message.warning {
+     background: #c09853;
+   }
+   .login-wrapper section.login-form .user-avatar {
+     width: 100%;
+     height: 100px;
+     margin-bottom: 10%;
+     text-align: center;
+   }
+   .login-wrapper section.login-form .user-avatar .avatar {
+     width: 64px;
+     height: 64px;
+     border-radius: 5%;
+     margin-bottom: 10px;
+   }
+   .login-wrapper section.login-form .user-avatar p.avatar-help {
+     font-size: 0.6em;
+   }
+   .login-wrapper section.login-form .user-avatar p.no-avatar {
+     line-height: 100px;
+   }
+   .login-wrapper section.login-form .login-field {
+     position: relative;
+     width: 100%;
+   }
+   .login-wrapper section.login-form .login-field .user-login, .login-wrapper section.login-form .login-field .user-password {
+     box-sizing: border-box;
+     width: 100%;
+     height: 50px;
+     margin: 5px auto;
+     border: 1px solid #EEE;
+     border-bottom: 1px solid #CCC;
+     padding: 5px 5px 5px 30px;
+     box-sizing: border-box;
+   }
+   .login-wrapper section.login-form .login-field .user-login + .glyphicon, .login-wrapper section.login-form .login-field .user-password + .glyphicon {
+     position: absolute;
+     top: 22px;
+     left: 10px;
+     color: #CCC;
+     transition: color 0.3s ease-out;
+   }
+   .login-wrapper section.login-form .login-field .user-login:focus + .glyphicon, .login-wrapper section.login-form .login-field .user-password:focus + .glyphicon {
+     color: #1E6FB2;
+   }
+   .login-wrapper section.login-form input[type=submit] {
+     background-color: #1E6FB2;
+     color: #FFF;
+     border: 0;
+     box-sizing: border-box;
+     width: 100%;
+     height: 50px;
+     margin: 5px auto;
+     padding: 5px 20px;
+     font-size: 1em;
+     transition: background 0.3s ease-out;
+   }
+   .login-wrapper section.login-form input[type=submit]:disabled {
+     background-color: #CCC;
+   }
+   .login-wrapper section.login-form input[type=submit]:active {
+     color: #000;
+     background-color: #ffe57d;
+     transition: none;
+     border-bottom-color: darkgoldenrod;
+     border-bottom-style: solid;
+     border-bottom-width: 1px;
+   }
+   .login-wrapper section.login-form .forget-passsword {
+     margin-top: 10%;
+   }
+   .login-wrapper section.login-form .maintenance {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     height: 100%;
+     width: 100%;
+   }
+   .login-wrapper section.login-form .maintenance p:first-child .glyphicon {
+     width: 30%;
+     text-align: center;
+     padding: 5%;
+     border-radius: 50%;
+     background-color: #1E6FB2;
+     color: #FFF;
+     font-size: 3em;
+     margin: 10% auto;
+   }
+   .login-wrapper section.login-form .maintenance p.notify-maintenance {
+     font-size: 0.8em;
+   }
+   .login-wrapper section.login-form .maintenance p.notify-maintenance .glyphicon {
+     display: inline;
+   }
+   .login-wrapper section.login-form .maintenance * {
+     display: block;
+   }
+   .login-wrapper section.login-form .maintenance .maintenance-connection {
+     align-self: flex-end;
+   }
+   .login-wrapper section.login-info {
+     height: 100%;
+     order: 2;
+     background-color: #1E6FB2;
+     color: #FFF;
+     justify-content: space-between;
+     /*background-image: url('http://www.modul-bio.com/wp-content/uploads/2015/04/10924325-576x413.jpg');
+     background-size: cover;
+     background-position: 50% 50%;*/
+   }
+   .login-wrapper section.login-info .client-logo {
+     width: 120px;
+     height: 120px;
+     background: url("http://www.modul-bio.com/wp-content/uploads/2016/02/nyu1.png") #1E6FB2;
+     background-size: cover;
+     border-radius: 5%;
+     margin: 0 auto;
+   }
+   .login-wrapper section.application-info {
+     height: 50%;
+     order: 3;
+     justify-content: flex-end;
+     background-color: #1E6FB2;
+     color: #FFF;
+   }
+   .login-wrapper section.application-info .application-logo {
+     text-align: center;
+   }
+   .login-wrapper section.application-info .copyright {
+     text-align: justify;
+     font-size: 0.7em;
+     margin-top: 5%;
+   }
+   
+   @media (max-width: 800px) {
+     .login-wrapper {
+       margin: 0;
+       width: 100%;
+       min-width: 100%;
+       max-width: 100%;
+       border-radius: 3px;
+       min-height: 100%;
+     }
+     .login-wrapper section {
+       width: 40%;
+     }
+     .login-wrapper section.login-form {
+       width: 60%;
+     }
+     
+
+   }
+   @media (max-width: 550px) {
+    button{
+        margin:3px;
+    }
+   .gwinnettLogo{
+        width:250px;
+        height: 112px;
+    }
+    .indexbtn{
+       margin: 3px;
+    }
+     section.login-wrapper {
+       height: 100%;
+       width: 100%;
+       flex-direction: row;
+       justify-content: flex-start;
+     }
+     section.login-wrapper section {
+       width: 100% !important;
+       height: auto !important;
+     }
+     section.login-wrapper section.login-form {
+       order: 2;
+     }
+     section.login-wrapper section.login-info {
+       order: 1;
+     }
+     section.login-wrapper section.application-info {
+       order: 3;
+     }
+   }

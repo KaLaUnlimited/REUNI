@@ -2,9 +2,14 @@ extends layout
 block body
 
     div.container
-        h1 Select to begin
+        section(id="login-component" class="login-wrapper")
+            section(class="login-form")
+                h1 Select to begin
 
-        a(href="/checkin")
-            button.btn Check-In
-        a(href="/admin")
-            button.btn Faculty / Admin
+                a(href="/checkin")
+                    button(class="btn indexbtn" style="margin:3px;width: 85%;") Check-In
+                a(href="/admin")
+                    button(class="btn indexbtn"  style="margin:3px;width: 85%;") Faculty / Admin
+                span( class="glyphicon glyphicon-wrench" aria-hidden="true")
+            section(class="login-info")
+                img(style="width:250px; height: 112px;" class ="gwinnettLogo" src="../assets/gcps-logo2.png" alt="Image Title")
