@@ -33,3 +33,72 @@ p {
 *, *:before, *:after {
     box-sizing: border-box;
 }
+
+/* html, body {
+    background-color: #a9adb2;
+    font-family: sans-serif !important;
+    font-size: 14px;
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/circles-and-roundabouts.png);
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+  }
+  #flex-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #container{
+    background-color: #14386d;
+    position: relative;
+    text-align: center;
+    border: 5px solid #1b2c44;
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+  }
+  h1 {
+      
+  }
+  #header {
+    background-color: #14386d;
+  }
+  button {
+    border-radius: 10px;
+    width: 70%;
+    padding: 15px 0;
+    margin: 10px 0;
+    text-align: center;
+    background-color: #2469d8;
+    -webkit-transition: all .25s;;
+    -moz-transition: all .25s;;
+    -o-transition: all .25s;;
+    -ms-transition: all .25s;;
+    transition: all .25s;;
+  }
+  button:hover {
+    background-color: rgb(159, 208, 110);
+    color: #4d6da0;
+  }
+  a {
+    color: #73a0d6;
+    -webkit-transition: all .25s;;
+    -moz-transition: all .25s;;
+    -o-transition: all .25s;;
+    -ms-transition: all .25s;;
+    transition: all .25s;;
+  }
+  button:hover a {
+    color: #a9caf2;
+  }
+  #submit {
+    background-color: #787e87;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+  } */

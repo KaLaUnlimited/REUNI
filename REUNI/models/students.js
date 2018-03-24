@@ -1,15 +1,9 @@
-var Sequelize = require('sequelize');
-
 module.exports = function(sequelize, DataTypes) {
   var Students = sequelize.define("Students", {
     student_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      validate: { 
-        min: 100000000,
-        max: 999999999
-      }
+      primarykey:true
+    
     },
     student_name: {
       type: DataTypes.STRING,
@@ -17,52 +11,75 @@ module.exports = function(sequelize, DataTypes) {
     },
     student_photo: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+     
     },
     grade_level: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    parent_name: {
+    par_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    parent_addr: {
+    par_addr: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    parent_csz: {
+    par_csz: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    parent_govt_id: {
+    par_gvt_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: { 
         min: 100000000,
         max: 999999999
       }
-    },
-    reunify_pnt: {
-      type: DataTypes.STRING,
-      allowNull: false
+     
     },
     student_status: {
       type: DataTypes.STRING,
+      defaultValue: "NOT CHECKED",
       allowNull: false
     },
-    time_stamp: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.NOW  
+
+    student_checkin_time: {
+      type: DataTypes.DATE,
+      defaultValue:DataTypes.NULL
     },
-    {
-    classMethods: {
-      associate: function(models) {
-        Student.hasOne(models.Checkin_parent);
-      }
-    }
+
+    parent_status:{
+      type:DataTypes.STRING,
+      defaultValue:"NOT CHECKED",
+    },
+
+    parent_checkin_time:{
+      type:DataTypes.DATE,
+      defaultValue:DataTypes.NULL
+      
+    },
+
+    united_status:{
+      type:DataTypes.STRING,
+      defaultValue:"NOT UNITED", 
+      allowNull: false
+    },
+
+    united_time:{
+      type:DataTypes.DATE,
+      defaultValue:DataTypes.NULL
+      
+    },
+   
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE 
+     
+
   });
+
+  
 
   return Students;
 };
-
