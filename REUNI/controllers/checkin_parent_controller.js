@@ -32,6 +32,23 @@ router.get("/checkin_parent", function(req, res) {
   });
 });
 
+router.post("/parents/checkin", function(req, res){
+    db.Students.find({
+
+        where: {
+            parent_govt_id :req.body.id
+        },
+    })
+    // use promise method to pass the students...
+        .then(function(dbStudent) {
+
+            console.log("parent_find: ", dbStudent);
+
+            return res.render("parent_result_modal", dbStudent);
+        });
+
+})
+
 // post route to create checkin_parents
 router.post("/checkin_parent/create", function(req, res) {
   // edited checkin_parent create to add in a checkin_parent_name
