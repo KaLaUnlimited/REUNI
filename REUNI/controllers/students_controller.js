@@ -52,9 +52,9 @@ router.post("/api/students", function (req, res) {
             res.json(dbStudents);
         });
 });
+insertStudentData();
+db.sequelize.sync({}).then(function () {
 
-db.sequelize.sync({force:true}).then(function () {
-    insertStudentData();
     console.log("Data is synched and inserted to the database")
   })
 module.exports = router;
