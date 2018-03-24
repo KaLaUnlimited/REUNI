@@ -97,10 +97,12 @@ html, body {
 .table-wrapper {
   display: flex;
   width: 100%;
+  margin-top: 0;
+  margin-left:200px;
   
 }
-table{
- 
+.h1ad{
+ margin:30px ;
 }
 
    th {
