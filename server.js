@@ -51,6 +51,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(require('./controllers/checkin_parent_controller'))
 app.use(require('./controllers/students_controller'))
 app.use(require('./controllers/view-routes'));
+app.use(require('./controllers/admin_controller'));
 
 // listen on port 3000
 var port = process.env.PORT || 3000;
