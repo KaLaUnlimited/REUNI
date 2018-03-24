@@ -48,8 +48,8 @@ app.set('views', path.join(__dirname, 'views'));
 // app.use("/admin_reunify/create", routes4);
 
 // app.use("/admin_parents", routes5);
-
-app.use(require('./controllers/students'))
+app.use(require('./controllers/checkin_parent_controller'))
+app.use(require('./controllers/students_controller'))
 app.use(require('./controllers/view-routes'));
 
 // listen on port 3000

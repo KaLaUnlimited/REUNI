@@ -1,11 +1,12 @@
 extends layout
 block body
+    include modal
     include back
 
     div.container
         h1 Student
             p Enter your ID
-            form(id="id_form" method="get" action="/")
+            form(id="id_form")
                 input(placeholder="Student ID" id="student_id")
                 button Submit
             a(href="/")

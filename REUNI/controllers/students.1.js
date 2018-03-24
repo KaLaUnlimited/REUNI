@@ -4,21 +4,18 @@ var db = require('../models');
 
 var router = express.Router();
 
-router.post("/parent", function (req, res) {
-    console.log(req.body);
+router.post("/api/parents", function (req, res) {
     db.Students.findAll({
             where: {
-                par_gvt_id: req.body.par_gvt_id
+                par_govt_id: req.body.id
             },
         })
         // use promise method to pass the students...
         .then(function (dbStudents) {
-            console.log("parents_find: ", dbStudents);
+            console.log("students_find: ", dbStudents);
 
             // send students back as a JSON object
-            res.json({
-                par_name: dbStudents[0].par_name
-            });
+            res.json(dbStudents);
         });
 });
 
