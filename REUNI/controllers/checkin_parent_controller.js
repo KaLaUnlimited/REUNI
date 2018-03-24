@@ -53,6 +53,18 @@ router.post("/parent", function (req, res) {
             });
         });
 });
+router.post("/parents/checkin", function(req, res){
+    db.Students.find({
+        where: {
+            parent_id :req.body.id
+        },
+    })
+    // use promise method to pass the students...
+        .then(function(dbStudent) {
+            console.log("student_find: ", dbStudent);
+            return res.render("parent_result_modal", dbStudent.dataValues);
+        });
+})
 db.sequelize.sync({force:true}).then(function () {
     insertStudentData();
     console.log("Data is synched and inserted to the database")

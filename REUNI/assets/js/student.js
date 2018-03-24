@@ -1,18 +1,17 @@
 $("#id_form").on('submit', function (e) {
     e.preventDefault();
-
     var studentID = $("#student_id").val().trim();
     getStudentInfo(studentID);
 });
-
 function getStudentInfo(id) {
-    $.post('/api/students', {
-            id: id
-        })
-        .then(function (res) {
-            console.log(res);
-        })
-        .catch(function (err) {
-            console.error(err);
-        });
+    $.post('/students/checkin', {id: id}).then(function (html) {
+        // 1. Add html to page
+        $("body").append(html)
+        // 2. Show modal with `modal()`
+        $('.modal').modal()
+        $('#student_id').val('')
+    })
 }
+
+
+

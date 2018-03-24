@@ -52,6 +52,18 @@ router.post("/api/students", function (req, res) {
             res.json(dbStudents);
         });
 });
+router.post("/students/checkin", function(req, res){
+    db.Students.find({
+        where: {
+            student_id :req.body.id
+        },
+    })
+    // use promise method to pass the students...
+        .then(function(dbStudent) {
+            console.log("student_find: ", dbStudent);
+            return res.render("student_result_modal", dbStudent.dataValues);
+        });
+})
 insertStudentData();
 db.sequelize.sync({}).then(function () {
 
