@@ -1,6 +1,13 @@
+@font-face {
+  font-family: "Copperplate";
+  src: url(https://www.dafontfree.net/download-copperplate-gothic-light-f119748.htm) format("truetype");
+}
+
 body {
-    background-color: burlywood;
+    margin-top: 30px; 
+    background-color:  #0B0C10;
     text-align: center;
+    font-family: "Copperplate", sans-serif; 
 }
 
 
@@ -13,7 +20,7 @@ button{
     border-radius: 20px;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Roboto',sans-serif;
+    font-family: "Copperplate", sans-serif;
     font-size: xx-large;
     font-weight:400;
     color:#FFFFFF;
@@ -28,8 +35,39 @@ a {text-decoration:none;}
 
 p {
     color: #333;
+    margin-top: 50px;
+    font-family: "Copperplate", sans-serif; 
 }
 
 *, *:before, *:after {
     box-sizing: border-box;
+}
+
+form {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    font-family: "Copperplate", sans-serif;
+   
+}
+
+h1 {
+
+    font-family: "Copperplate", sans-serif; 
+    color: #66FCF1;
+}
+
+input {
+
+    text-align: center;
+    color: white;
+    font-family: "Copperplate", sans-serif;
+}
+
+.button.button-outline.back {
+
+    width: 10%;
+    display: flex;
+    align-items: flex-end;
 }

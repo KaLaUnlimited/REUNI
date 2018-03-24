@@ -1,10 +1,13 @@
 extends layout
 block body
-    include back
+    
 
 
-    h1 Parent
+    h1 PARENT
     p Enter your Driver's License / ID
     form(method="get" action="result.pug.html")
         input(placeholder="Driver's License / ID")
-        button Submit
+        
+    button.button.button-outline Submit
+
+    include back

@@ -1,9 +1,12 @@
 extends layout
 block body
-    include back
+    
 
-    h1 Student
-    p Enter your ID
+    h1 STUDENT
+    p ENTER YOUR ID
     form(method="get" action="result.pug.html")
         input(placeholder="ID")
-        button Submit
+        
+    button.button.button-outline Submit
+    div.container
+    include back
